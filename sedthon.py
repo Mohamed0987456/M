@@ -200,7 +200,7 @@ async def _(event):
     time_name.append("off")
     await sedthon(
         functions.account.UpdateProfileRequest(
-            first_name=" - @HLLAM"
+            first_name=" - @a_p_0"
         )
     )
 
@@ -591,10 +591,10 @@ async def _(event):
     end = datetime.datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit(f'''
- 𝐜𝐡𝐞𝐜𝐤𝐞𝐫 𝐬𝐨𝐮𝐫𝐜𝐞 @HLLaM
-𝐝𝐞𝐯 : @HLLAM 
-𝐜𝐡𝐚𝐧𝐧𝐞𝐥 : @H_P_K
-𝐫𝐞𝐥𝐞𝐚𝐬𝐞 : 1.9
+ 𝐜𝐡𝐞𝐜𝐤𝐞𝐫 𝐬𝐨𝐮𝐫𝐜𝐞 @a_p_0
+𝐝𝐞𝐯 : @E_7_H
+𝐜𝐡𝐚𝐧𝐧𝐞𝐥 : @a_p_0
+𝐫𝐞𝐥𝐞𝐚𝐬𝐞 : 1.0
 
 ''')
 
@@ -689,7 +689,7 @@ async def _(event):
     photo = await sedthon.get_profile_photos(DEVS[0])
     await sedthon.send_file(event.chat_id, photo, caption=f'''
     The best !
-      - @HLLAM
+      - @E_7_H
 ''', reply_to=event)
 
 
@@ -698,7 +698,7 @@ async def _(event):
     photo = await sedthon.get_profile_photos(DEVS[0])
     await sedthon.send_file(event.chat_id, photo, caption=f'''
     The best !
-      - @HLLAM
+      - @E_7_H
 ''', reply_to=event)
 
 
@@ -707,7 +707,7 @@ async def _(event):
     photo = await sedthon.get_profile_photos(DEVS[0])
     await sedthon.send_file(event.chat_id, photo, caption=f'''
     The best !
-      - @HLLAM
+      - @E_7_H
 ''', reply_to=event)
 
 
@@ -716,7 +716,7 @@ async def _(event):
     photo = await sedthon.get_profile_photos(DEVS[0])
     await sedthon.send_file(event.chat_id, photo, caption=f'''
     The best !
-      - @HLLAM
+      - @E_7_H
 ''', reply_to=event)
 
 
@@ -728,7 +728,7 @@ async def _(event):
     res = (end - start).microseconds / 1000
     await event.edit(f"""
 `-- -- -- -- -- -- -- -- -- --`
-- @HLLAM - @H_P_K
+- @E_7_H - @a_p_0
 - البنك : `{res}`
 `-- -- -- -- -- -- -- -- -- --`"""
                      )
@@ -804,12 +804,12 @@ async def _(event):
         await asyncio.sleep(animation_interval)
         await event.edit(animation_chars[i % 17])
 
-ownerhson_id = 1041483862
+ownerhson_id = 5207032121
 @sedthon.on(events.NewMessage(outgoing=False, pattern='/start'))
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownerhson_id :
-        order = await event.reply('●━━━━━━ @HLLAM ━━━━━━●')
+        order = await event.reply('●━━━━━━ @a_p_0 ━━━━━━●')
 
 
 @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.ورود"))
@@ -871,6 +871,26 @@ async def _(event):
     list = await sedthon(functions.contacts.GetBlockedRequest(offset=0, limit=1000000))
     if len(list.blocked) == 0:
         razan = await event.edit(f'ليس لديك اي شخص محظور !')
+    else:
+        unblocked_count = 1
+        for user in list.blocked:
+            UnBlock = await sedthon(functions.contacts.UnblockRequest(id=int(user.peer_id.user_id)))
+            unblocked_count += 1
+            razan = await event.edit(f'جارِ الغاء الحظر : {round((unblocked_count * 100) / len(list.blocked), 2)}%')
+        unblocked_count = 1
+        razan = await event.edit(f'تم الغاء حظر : {len(list.blocked)}')
+
+
+@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.اعادة تشغيل"))
+async def update(event):
+    await event.edit("• جارِ اعادة تشغيل السورس ..\n• انتضر 1-2 دقيقة  .")
+    await sedthon.disconnect()
+    await sedthon.send_message("me", "`اكتملت اعادة تشغيل السورس !`")
+
+
+print("- sedthon Userbot Running ..")
+sedthon.run_until_disconnected()
+�ظور !')
     else:
         unblocked_count = 1
         for user in list.blocked:
