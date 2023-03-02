@@ -890,5 +890,4 @@ async def update(event):
 
 
 print("- sedthon Userbot Running ..")
-sedthon.run_until_disconnected()bot Running ..")
 sedthon.run_until_disconnected()
