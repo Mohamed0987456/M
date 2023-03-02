@@ -40,7 +40,7 @@ hijri = f"{Gregorian.today().to_hijri()} - {hijri_day.text}"
 LOGS = logging.getLogger(__name__)
 
 DEVS = [
-    5693914475,
+    5207032121,
 ]
 DEL_TIME_OUT = 10
 normzltext = "1234567890"
@@ -591,10 +591,11 @@ async def _(event):
     end = datetime.datetime.now()
     ms = (end - start).microseconds / 1000
     await event.edit(f'''
- 𝐜𝐡𝐞𝐜𝐤𝐞𝐫 𝐬𝐨𝐮𝐫𝐜𝐞 @a_p_0
-𝐝𝐞𝐯 : @E_7_H
+𝐰𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐜𝐡𝐞𝐜𝐤𝐞𝐫 𝐬𝐨𝐮𝐫𝐜𝐞 AMthon
+𝐝𝐞𝐯 : @E_7_H 
 𝐜𝐡𝐚𝐧𝐧𝐞𝐥 : @a_p_0
-𝐫𝐞𝐥𝐞𝐚𝐬𝐞 : 1.0
+𝐫𝐞𝐥𝐞𝐚𝐬𝐞 : 1.1
+𝐥𝐞𝐭 𝐭𝐡𝐞𝐦 𝐥𝐚𝐮𝐠𝐡, 𝐭𝐡𝐞𝐲 𝐰𝐢𝐥𝐥 𝐧𝐨𝐭 𝐫𝐞𝐚𝐜𝐡 𝐦𝐞
 
 ''')
 
@@ -809,7 +810,7 @@ ownerhson_id = 5207032121
 async def OwnerStart(event):
     sender = await event.get_sender()
     if sender.id == ownerhson_id :
-        order = await event.reply('●━━━━━━ @a_p_0 ━━━━━━●')
+        order = await event.reply('اهلا وسهلا بيك يا مطوري محمد - @E_7_H')
 
 
 @sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.ورود"))
@@ -889,24 +890,5 @@ async def update(event):
 
 
 print("- sedthon Userbot Running ..")
-sedthon.run_until_disconnected()
-�ظور !')
-    else:
-        unblocked_count = 1
-        for user in list.blocked:
-            UnBlock = await sedthon(functions.contacts.UnblockRequest(id=int(user.peer_id.user_id)))
-            unblocked_count += 1
-            razan = await event.edit(f'جارِ الغاء الحظر : {round((unblocked_count * 100) / len(list.blocked), 2)}%')
-        unblocked_count = 1
-        razan = await event.edit(f'تم الغاء حظر : {len(list.blocked)}')
-
-
-@sedthon.on(events.NewMessage(outgoing=True, pattern=r"\.اعادة تشغيل"))
-async def update(event):
-    await event.edit("• جارِ اعادة تشغيل السورس ..\n• انتضر 1-2 دقيقة  .")
-    await sedthon.disconnect()
-    await sedthon.send_message("me", "`اكتملت اعادة تشغيل السورس !`")
-
-
-print("- sedthon Userbot Running ..")
+sedthon.run_until_disconnected()bot Running ..")
 sedthon.run_until_disconnected()
